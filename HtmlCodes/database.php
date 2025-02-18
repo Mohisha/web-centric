@@ -13,6 +13,7 @@ if ($conn->connect_error) {
    // validation
     die("Connection failed: " . $conn->connect_error);
 }
+//mohisha
 
 // Optionally set the character set for the connection to UTF-8
 $conn->set_charset("utf8");
