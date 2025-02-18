@@ -1,0 +1,91 @@
+:root {
+    --blue: hsl(201, 100%, 14%, .95);
+    --red: hsl(0, 69%, 50%, .8);
+    --orange: hsla(190, 100%, 48%, 0.662);
+    --yellow: hsl(40, 97%, 64%);
+    --flesh: hsl(51, 55%, 82%);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: hsl(201, 95%, 70%, .7);
+    background-image: url("https://images.unsplash.com/photo-1440492248262-6895f9da82fc?crop=entropy&cs=srgb&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=85");
+    background-blend-mode: multiply;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+form {
+    background-color: var(--blue);
+    color: white;
+    padding: 30px; /* Increased padding for a bigger background box */
+    width: 100%;
+    max-width: 700px; /* Increased max-width to make the form larger */
+    margin: 30px auto; /* Adjusted margin for spacing */
+    border-radius: 15px; /* Slightly larger border-radius for a smoother look */
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+input[type="radio"] {
+    width: 100%;
+    padding: 12px; /* Increased padding for inputs */
+    margin: 10px 0;
+    border: 2px solid var(--flesh);
+    border-radius: 4px;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border: 2px solid var(--orange);
+    box-shadow: 0px 0px 5px var(--orange);
+}
+
+textarea {
+    resize: horizontal;
+}
+
+label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+input[type="submit"] {
+    background-color: var(--orange);
+    color: var(--blue);
+    border: none;
+    border-radius: 7px;
+    padding: 15px; /* Increased padding for the submit button */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--yellow);
+}
+
+#submit {
+    margin-top: 15px;
+}
+
+.textshadow {
+    text-shadow: 2px 2px var(--red);
+}

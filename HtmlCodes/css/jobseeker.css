@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center;
+    background-image: url('../images/Background.jpg'); /* Set your background image here */
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    width: 100vw;
+    padding: 10px;
+    display: flex;
+    height: 55px;
+    align-items: center; /* Vertically center the content */
+    background: rgba(0, 0, 0, 0.5); /* Transparent background for the header */
+}
+
+
+.logo img{
+    width: 80px;
+    padding-left: 0px;
+    float: left;
+    height: auto;
+  }
+
+.nav-area {
+    list-style: none;
+    display: flex;
+    margin-left: auto; /* Push the nav items to the right */
+    padding: 0;
+}
+
+.nav-area li {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.nav-area li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-area li a:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.welcome-text {
+    padding: 30px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6); /* Transparent background for the text */
+    margin: 0 auto;
+    flex-grow: 1; /* Fills the rest of the page */
+}
+
+.welcome-text h1, h2 {
+    margin-top: 0;
+}
+
+ul.job-list {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+}
+
+ul.job-list li {
+    margin: 20px 0;
+}
+
+.job-title {
+    background-color: rgba(89, 177, 160, 0.674); /* Box background color */
+    color: white;
+    padding: 10px 15px; /* Adjust padding inside the box */
+    border-radius: 5px; /* Rounded corners */
+    border: 2px solid #000;
+    font-size: 18px; /* Font size for job title */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.job-title:hover {
+    background-color: #21883785; /* Darker green on hover */
+}
+
+.job-description {
+    color: #ddd; /* Color for job description */
+    font-size: 16px; /* Font size for description */
+    margin: 15px 0; /* Margin for spacing */
+}

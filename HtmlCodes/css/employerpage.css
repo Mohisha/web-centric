@@ -1,0 +1,64 @@
+/* General Styles */
+body {
+    background-color: hsl(201, 95%, 70%,.7);
+	background-image: url("https://images.unsplash.com/photo-1440492248262-6895f9da82fc?crop=entropy&cs=srgb&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=85");
+	background-blend-mode: multiply;	
+	background-position: center center;
+	background-repeat: no repeat;
+	background-attachment: fixed;
+}
+
+/* Navbar styling */
+nav {
+    background-color: #094f7795; /* Dark blue background */
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0 auto;
+    width : 100%;
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between items */ 
+    align-items: center; /* Center items vertically */
+    color: white; /* White text color */
+}
+
+nav ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    font: 20px serif;
+    display: flex; /* Flexbox for horizontal list */
+}
+
+nav ul li {
+    margin-left: 20px; /* Space between list items */
+}
+
+nav ul li a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+nav .login-icon {
+    font-size: 1.5em; /* Increase font size for login icon */
+}
+
+/* Job blocks */
+.jobs-container {
+    padding:  15px 20px; /* Padding around the job listings */
+}
+
+.job-block {
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 20px; /* Padding inside job blocks */
+    margin: 10px; /* Margin around job blocks */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f4f4f4; /* Light grey background for job blocks */
+}
+
+.job-block h2 {
+    margin: 0; /* Remove default margin */
+}
+
+.job-block p {
+    margin: 5px 0; /* Space between paragraphs */
+}

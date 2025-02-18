@@ -1,0 +1,91 @@
+body {
+  background-image: url("images\recruit4.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: Lora, sans-serif;
+}
+
+.wrapper {
+  width: 100vw; /* Set to 100% of the viewport width */
+  padding: 10px;
+  display: flex;
+  height: 55px;
+  align-items: center; /* Vertically center the content */
+}
+
+.nav-area {
+  background: rgba(114, 121, 185, 0.39);
+  height: 80px;
+  width: 100%; /* Set width to 100% */
+  justify-content: flex-end; /* Align nav items to the right */
+  align-items: center;
+
+  left: 0;
+  right: 0;
+}
+
+.nav-area li {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.nav-area li a {
+  color: #000;
+  text-decoration: none;
+  padding: 5px 20px;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 15px;
+  list-style: none;
+}
+
+.nav-area li a:hover {
+  background: #fff;
+  color: #333;
+}
+
+.logo img{
+  width: 80px;
+  padding-left: -15px;
+  float: left;
+  height: auto;
+  z-index: 1;
+}
+
+
+.welcome-text {
+  position: absolute;
+  width: 600px;
+  height: auto;
+  margin: 5% 10%;
+  font-weight: bold;
+  text-align: left;
+}
+
+.welcome-text h1 {
+  text-align: left;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-family: poppins;
+  margin-bottom: 30px;
+}
+
+.welcome-text a {
+  display: inline-block;
+  border: 2px solid #000000;
+  padding: 10px 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 1
+}
+
+.welcome-text a:hover {
+  background-color: #446cc38b;
+}
