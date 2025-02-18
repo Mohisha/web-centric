@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($role === "jobseeker") {
                 header("Location: jobseeker-home.php");
             } elseif ($role === "employer") {
-                header("Location: employer-home.php");
+                header("Location: employerhome.php");
             } else {
                 header("Location: admin-home.php");
             }
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($role === "jobseeker") {
                 header("Location: jobseeker-home.php");
             } elseif ($role === "employer") {
-                header("Location: employer-home.php");
+                header("Location: employerhome.php");
             } else {
                 header("Location: admin-home.php");
             }
