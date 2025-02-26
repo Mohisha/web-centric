@@ -24,20 +24,21 @@ $jobResult = $conn->query($jobQuery);
     <title>Job Seeker Dashboard</title>
     <link rel="stylesheet" href="css/jobseeker.css">
 </head>
-<body>
-  
+<body style="background-image: url('https://cdn.sanity.io/images/uqxwe2qj/production/4ee9fb18bdc214aefebf7859557a6611125c3841-760x426.png?q=80&auto=format&fit=clip&w=760');">
+
 <header>
     <div class="wrapper">
         <div class="logo">
             <img src='images/logo1.jpg' alt='JobQuest Logo'>
         </div>
         <ul class="nav-area">
+            <li>
+                <a href="search.php">Job Search<img src="images/search-icon.png" alt="" class="nav-icon" width="22" height="22"></a>
+            </li>
             <li><a href="jobseeker-home.php">Homepage</a></li>
-            <li><a href="search.php">Job Search</a></li>
             <li><a href="profile.php">Profile</a></li>
             <li><a href="review.php">Review</a></li>
             <li><a href="logout.php">Logout</a></li>
-            <!-- Search Form -->
         </ul>
     </div>
 </header>
@@ -46,27 +47,25 @@ $jobResult = $conn->query($jobQuery);
     <h1>Welcome, <?php echo htmlspecialchars($username); ?>!</h1>
 
     <h2>Job Recommendations</h2>
-    <ul class="job-list"> <!-- Add a class to the list for styling -->
+    <ul class="job-list">
         <?php
         if ($jobResult->num_rows > 0) {
             while ($job = $jobResult->fetch_assoc()) {
                 echo "<li>";
-                // Form submission for job details using POST
                 echo "<form action='job-detail.php' method='POST'>";
                 echo "<input type='hidden' name='job_id' value='" . $job['JobID'] . "'>";
                 echo "<button type='submit' class='job-title'>" . htmlspecialchars($job['Title']) . "</button>";
                 echo "</form>";
                 echo "<p class='job-description'>" . htmlspecialchars($job['Description']) . "</p>";
-                echo "<small>Posted on: " . htmlspecialchars($job['DatePosted']) . "</small>";
+                echo "<p class='job-date'>" . htmlspecialchars($job['DatePosted']) . "</p>";
                 echo "</li>";
             }
         } else {
-            echo "<li>No job recommendations available at the moment.</li>";
+            echo "<p>No jobs found at the moment.</p>";
         }
         ?>
     </ul>
 </div>
 
-<?php $conn->close(); ?>
 </body>
 </html>

@@ -9,9 +9,9 @@ if (!isset($_SESSION['username'])) {
 }
 
 // Check if the job_id is sent via POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['job_id'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['job_id'])) {
     // Store the job ID in a session variable
-    $_SESSION['job_id'] = $_POST['job_id'];
+    $_SESSION['job_id'] = $_GET['job_id'];
 } elseif (!isset($_SESSION['job_id'])) {
     echo "No job selected.";
     exit();
@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['job_id'])) {
 // Use the job ID stored in the session to fetch job details
 $jobId = $_SESSION['job_id'];
 
-// Fetch job details from the database
-$jobQuery = "SELECT Title, Description, Location, Salary, DatePosted FROM jobs WHERE JobID = ?";
+
+$jobQuery = "SELECT Title, Description, Location, Salary, DatePosted, JobType, JobCategory, YearsOfExperience FROM jobs WHERE JobID = ?";
 $data = $conn->prepare($jobQuery);
 $data->bind_param("s", $jobId); 
 $data->execute();
@@ -50,10 +50,13 @@ $job = $result->fetch_assoc();
         <p><strong>Location:</strong> <?php echo htmlspecialchars($job['Location']); ?></p>
         <p><strong>Salary:</strong> <?php echo htmlspecialchars($job['Salary']); ?></p>
         <p><strong>Posted on:</strong> <?php echo htmlspecialchars($job['DatePosted']); ?></p>
+        <p><strong>Employment Type:</strong> <?php echo htmlspecialchars($job['JobType']); ?></p>
+        <p><strong>Job Field:</strong> <?php echo htmlspecialchars($job['JobCategory']); ?> </p>
+        <p><strong>Years Of Experience:</strong> <?php echo htmlspecialchars($job['YearsOfExperience']); ?> </p>
     </header>
 
     <!-- Back to Job List -->
-    <a href="jobseeker-home.php" class="back-btn">Back to Job List</a>
+    <a href="jobseeker-home.php" class="back-btn">Back</a>
 
     <!-- Apply for Job Button -->
     <form action="applyjob.php" method="POST">

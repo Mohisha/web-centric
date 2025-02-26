@@ -6,9 +6,10 @@ body {
     flex-direction: column;
     justify-content: center; /* Center vertically */
     align-items: center;
-    background-image: url('../images/Background.jpg'); /* Set your background image here */
+    background-image: url("https://cdn.sanity.io/images/uqxwe2qj/production/4ee9fb18bdc214aefebf7859557a6611125c3841-760x426.png?q=80&auto=format&fit=clip&w=760");
     background-size: cover;
     background-position: center;
+    /* background-color:gray; */
 }
 
 .wrapper {
@@ -37,10 +38,14 @@ body {
 
 .nav-area li {
     margin-left: 20px;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
 }
 
 .nav-area li a {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
     text-decoration: none;
     color: #fff;
     font-weight: bold;

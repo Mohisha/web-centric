@@ -57,7 +57,7 @@ $conn->close(); // Close the connection
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url("images/Background.jpg");
+            background-image: url("https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
             background-size: cover;
             background-position: top;
         }
