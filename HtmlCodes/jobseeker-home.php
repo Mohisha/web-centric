@@ -14,6 +14,8 @@ $username = $_SESSION['username'];
 // Fetch job recommendations from the database
 $jobQuery = "SELECT JobID, Title, Description, DatePosted FROM jobs ORDER BY DatePosted DESC";
 $jobResult = $conn->query($jobQuery);
+
+setcookie('source', 'home');
 ?>
 
 <!DOCTYPE html>
@@ -66,11 +68,4 @@ $jobResult = $conn->query($jobQuery);
 </div>
 
 </body>
-<script>
-    $(document).ready(function(){
-        $("a.job-title").click(function(){
-            document.cookie = "source='home'";
-        });
-    })
-    </script>
 </html>

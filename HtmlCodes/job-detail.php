@@ -36,11 +36,7 @@ $job = $result->fetch_assoc();
 $back_url = "jobseeker-home.php"; // default
 if (isset($_COOKIE['source'])) {
     $source = $_COOKIE['source'];
-    echo "Source is: " . htmlspecialchars($source);
-} else {
-    echo "Source cookie not found.";
 }
-
 if($source == 'home'){
     $back_url = "jobseeker-home.php";
 }
