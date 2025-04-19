@@ -1,8 +1,8 @@
 <?php
 // Database configuration
 $servername = "localhost"; // Server where your database is hosted
-$username = "ayushee"; // 
-$password = "ayushee1"; // 
+$username = "root"; // 
+$password = ""; // 
 $dbname = "jobrecruitment"; // 
 
 // Creates a connection to the database

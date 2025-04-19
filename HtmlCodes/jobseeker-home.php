@@ -52,10 +52,7 @@ $jobResult = $conn->query($jobQuery);
         if ($jobResult->num_rows > 0) {
             while ($job = $jobResult->fetch_assoc()) {
                 echo "<li>";
-                echo "<form action='job-detail.php' method='POST'>";
-                echo "<input type='hidden' name='job_id' value='" . $job['JobID'] . "'>";
-                echo "<button type='submit' class='job-title'>" . htmlspecialchars($job['Title']) . "</button>";
-                echo "</form>";
+                echo "<a href='job-detail.php?job_id=" . urlencode($job['JobID']) . "' class='job-title'>" . htmlspecialchars($job['Title']) . "</a>";
                 echo "<p class='job-description'>" . htmlspecialchars($job['Description']) . "</p>";
                 echo "<p class='job-date'>" . htmlspecialchars($job['DatePosted']) . "</p>";
                 echo "</li>";

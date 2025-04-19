@@ -8,22 +8,21 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-// Check if the job_id is sent via POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['job_id'])) {
-    // Store the job ID in a session variable
+if (isset($_GET['job_id'])) {
     $_SESSION['job_id'] = $_GET['job_id'];
 } elseif (!isset($_SESSION['job_id'])) {
     echo "No job selected.";
     exit();
 }
 
+
 // Use the job ID stored in the session to fetch job details
 $jobId = $_SESSION['job_id'];
 
 
-$jobQuery = "SELECT Title, Description, Location, Salary, DatePosted, JobType, JobCategory, YearsOfExperience FROM jobs WHERE JobID = ?";
+$jobQuery = "SELECT j.Title, j.Description, j.Location, j.Salary, j.DatePosted, j.JobType, j.JobCategory, j.YearsOfExperience, e.CompanyName FROM jobs j JOIN employer e ON j.EmpID = e.EmployerID WHERE j.JobID = ?";
 $data = $conn->prepare($jobQuery);
-$data->bind_param("s", $jobId); 
+$data->bind_param("s", $jobId);
 $data->execute();
 $result = $data->get_result();
 
@@ -53,6 +52,8 @@ $job = $result->fetch_assoc();
         <p><strong>Employment Type:</strong> <?php echo htmlspecialchars($job['JobType']); ?></p>
         <p><strong>Job Field:</strong> <?php echo htmlspecialchars($job['JobCategory']); ?> </p>
         <p><strong>Years Of Experience:</strong> <?php echo htmlspecialchars($job['YearsOfExperience']); ?> </p>
+        <p><strong>Company Name:</strong> <?php echo htmlspecialchars($job['CompanyName']); ?></p>
+
     </header>
 
     <!-- Back to Job List -->
