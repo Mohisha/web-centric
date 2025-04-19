@@ -23,6 +23,7 @@ $jobResult = $conn->query($jobQuery);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Seeker Dashboard</title>
     <link rel="stylesheet" href="css/jobseeker.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body style="background-image: url('https://cdn.sanity.io/images/uqxwe2qj/production/4ee9fb18bdc214aefebf7859557a6611125c3841-760x426.png?q=80&auto=format&fit=clip&w=760');">
 
@@ -65,4 +66,11 @@ $jobResult = $conn->query($jobQuery);
 </div>
 
 </body>
+<script>
+    $(document).ready(function(){
+        $("a.job-title").click(function(){
+            document.cookie = "source='home'";
+        });
+    })
+    </script>
 </html>

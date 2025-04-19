@@ -32,6 +32,22 @@ if ($result->num_rows === 0) {
 }
 
 $job = $result->fetch_assoc();
+
+$back_url = "jobseeker-home.php"; // default
+if (isset($_COOKIE['source'])) {
+    $source = $_COOKIE['source'];
+    echo "Source is: " . htmlspecialchars($source);
+} else {
+    echo "Source cookie not found.";
+}
+
+if($source == 'home'){
+    $back_url = "jobseeker-home.php";
+}
+if($source == 'job_detail'){
+    $back_url = "search.php";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -55,11 +71,11 @@ $job = $result->fetch_assoc();
         <p><strong>Company Name:</strong> <?php echo htmlspecialchars($job['CompanyName']); ?></p>
 
     </header>
-
+   
     <!-- Back to Job List -->
-    <a href="jobseeker-home.php" class="back-btn">Back</a>
+    <a href=<?php echo $back_url; ?> class="back-btn">Back</a>
 
-    <!-- Apply for Job Button -->
+    <!-- Apply for Job Button  DONT USE FORM TO APPLY FOR JOB APPLICATION -->
     <form action="applyjob.php" method="POST">
     <input type="hidden" name="job_id" value="<?php echo $jobId; ?>">
     <button type="submit" class="apply-btn">Apply for Job</button>
