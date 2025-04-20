@@ -13,25 +13,14 @@ setcookie("source", "job_detail");
     <meta charset="UTF-8">
     <title>Job Search</title>
     <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/logout.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<header>
-    <div class="wrapper">
-        <div class="logo">
-            <img src='images/logo1.jpg' alt='JobQuest Logo'>
-        </div>
-        <ul class="nav-area">
-            <li>
-                <a href="search.php">Job Search<img src="images/search-icon.png" alt="" class="nav-icon" width="22" height="22"></a>
-            </li>
-            <li><a href="jobseeker-home.php">Homepage</a></li>
-            <li><a href="profile.php">Profile</a></li>
-            <li><a href="review.php">Review</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </ul>
-    </div>
-</header>
+
 <body>
+    <?php
+        include("nav.php");
+    ?>
 
 <h1>Search for Jobs</h1>
 
