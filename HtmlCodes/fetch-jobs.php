@@ -27,6 +27,7 @@ if (!empty($searchType)) {
     $types .= 's';
 }
 
+
 $stmt = $conn->prepare($sql);
 
 if (!empty($params)) {
