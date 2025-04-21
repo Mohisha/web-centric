@@ -1,25 +1,34 @@
 <?php
 
-require_once 'vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use Opis\JsonSchema\Validator;
 
 function validate_profile_json($profileData) {
+    // Trim all input values to remove leading/trailing spaces
+    $profileData['FullName'] = trim($profileData['FullName']);
+    $profileData['Email'] = trim($profileData['Email']);
+    $profileData['PhoneNumber'] = trim($profileData['PhoneNumber']);
+    $profileData['Qualifications'] = trim($profileData['Qualifications']);
+    $profileData['experience'] = trim($profileData['experience']);
+    $profileData['education'] = trim($profileData['education']);
+    
+   
     // Define the JSON Schema as a PHP array
     $schema = json_decode('{
         "type": "object",
         "properties": {
-            "name": { "type": "string", "minLength": 1 },
-            "email": { "type": "string", "format": "email" },
-            "phone": { "type": "string", "minLength": 7 },
-            "qualifications": { "type": "string" },
+            "FullName": { "type": "string", "minLength": 1 },
+            "Email": { "type": "string", "format": "email" },
+            "PhoneNumber": { "type": "string", "minLength": 7 },
+            "Qualifications": { "type": "string" },
             "experience": { "type": "string", "pattern": "^[0-9]+$" },
             "education": {
                 "type": "string",
                 "enum": ["High School", "Bachelor", "Master", "PhD"]
             }
         },
-        "required": ["name", "email", "phone", "qualifications", "experience", "education"]
+        "required": ["FullName", "Email", "PhoneNumber", "Qualifications", "experience", "education"]
     }');
 
     $validator = new Validator();
@@ -32,7 +41,6 @@ function validate_profile_json($profileData) {
     }
 
     // Collect error messages
-    // Collect user-friendly validation error messages
     $errors = [];
 
     $error = $result->error(); // get the root error
@@ -61,7 +69,6 @@ function validate_profile_json($profileData) {
             }
         }
     }
+
     return $errors;
 }
-
-

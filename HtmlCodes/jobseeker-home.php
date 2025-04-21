@@ -10,6 +10,19 @@ if (!isset($_SESSION['username'])) {
 
 // Retrieve the username from the session
 $username = $_SESSION['username'];
+$userID = $_SESSION['UserID'];
+
+
+// Check if the user has a profile
+$profileCheck = $conn->prepare("SELECT UserID FROM jobseeker WHERE UserID = ?");
+$profileCheck->bind_param("i", $userID);
+$profileCheck->execute();
+$profileResult = $profileCheck->get_result();
+
+if ($profileResult->num_rows === 0) {
+    header("Location: create_profile.php");
+    exit();
+}
 
 // Fetch job recommendations from the database
 $jobQuery = "SELECT JobID, Title, Description, DatePosted FROM jobs ORDER BY DatePosted DESC";

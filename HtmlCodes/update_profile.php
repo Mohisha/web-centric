@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 require_once 'database.php';
 require_once 'validate_profile_json.php'; // Include the validation function
@@ -11,56 +11,66 @@ if (!isset($_SESSION['UserID']) || $_SESSION['role'] !== 'jobseeker') {
 $userID = $_SESSION['UserID'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the form input values
-    $name = $_POST['name'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $qualifications = $_POST['qualifications'] ?? '';
+    $name = $_POST['FullName'] ?? '';
+    $email = $_POST['Email'] ?? '';
+    $phone = $_POST['PhoneNumber'] ?? '';
+    $qualifications = $_POST['Qualifications'] ?? '';
     $experience = $_POST['experience'] ?? '';
     $education = $_POST['education'] ?? '';
 
-    // Collect profile data in an array
     $profileData = [
-        'name' => $name,
-        'email' => $email,
-        'phone' => $phone,
-        'qualifications' => $qualifications,
+        'FullName' => $name,
+        'Email' => $email,
+        'PhoneNumber' => $phone,
+        'Qualifications' => $qualifications,
         'experience' => $experience,
         'education' => $education,
     ];
 
-    // Validate the profile data using the validate_profile_json function
     $validationErrors = validate_profile_json($profileData);
 
     if ($validationErrors === true) {
-        // Validation passed, proceed with saving to the database
+        // Prepare JSON profile
         $profileJson = json_encode([
-            'qualifications' => $qualifications,
+            'Qualifications' => $qualifications,
             'experience' => $experience,
             'education' => $education
         ]);
 
-        // Update the jobseeker record in the database
-        $stmt = $conn->prepare("UPDATE jobseeker 
-            SET FullName = ?, Email = ?, PhoneNumber = ?, profile = ? 
-            WHERE UserID = ?");
-        $stmt->bind_param("ssssi", $name, $email, $phone, $profileJson, $userID);
-        $stmt->execute();
+        // Check if profile already exists
+        $checkStmt = $conn->prepare("SELECT UserID FROM jobseeker WHERE UserID = ?");
+        $checkStmt->bind_param("i", $userID);
+        $checkStmt->execute();
+        $result = $checkStmt->get_result();
 
-        // Redirect to the profile page after successful update
-        header('Location: profile.php');
-        exit;
+        if ($result->num_rows > 0) {
+            // UPDATE existing profile
+            $stmt = $conn->prepare("UPDATE jobseeker 
+                SET FullName = ?, Email = ?, PhoneNumber = ?, Profile = ? 
+                WHERE UserID = ?");
+            $stmt->bind_param("ssssi", $name, $email, $phone, $profileJson, $userID);
+        } else {
+            // INSERT new profile
+            $stmt = $conn->prepare("INSERT INTO jobseeker 
+                (UserID, FullName, Email, PhoneNumber, Profile) 
+                VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("issss", $userID, $name, $email, $phone, $profileJson);
+        }
+
+        if ($stmt->execute()) {
+            $_SESSION['profile_success'] = "Profile saved successfully!";
+            header("Location: profile.php");
+            exit;
+        } else {
+            echo "Database error: " . $stmt->error;
+        }
     } else {
-        // Validation failed, display the error messages
-        echo "<h3>Validation failed:</h3>";
-        echo "<ul>";
+        // Show validation errors
+        echo "<h3>Validation Errors:</h3><ul>";
         foreach ($validationErrors as $error) {
             echo "<li>" . htmlspecialchars($error) . "</li>";
         }
-        echo "</ul>";
-        
+        echo "</ul><a href='javascript:history.back()'>Go Back</a>";
     }
-} else {
-    echo "Invalid request.";
 }
 ?>

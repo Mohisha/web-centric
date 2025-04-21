@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "properties": {
+      "FullName": { "type": "string", "minLength": 1 },
+      "Address": { "type": "string", "minLength": 1 },
+      "PhoneNumber": { "type": "string", "pattern": "^[0-9\\-\\+\\s\\(\\)]*$" },
+      "Email": { "type": "string", "format": "email" }
+      
+    },
+    "required": ["FullName", "Address", "PhoneNumber", "Email"]
+  }
+  

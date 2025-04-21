@@ -18,12 +18,12 @@ $result = $stmt->get_result();
 $data = $result->fetch_assoc();
 
 if (!$data) {
-    echo json_encode(['error' => 'No profile found']);
+    echo json_encode(['createProfile' => true]);
     exit;
 }
 
 $profileData = json_decode($data['profile'], true) ?? [];
-$data['qualifications'] = $profileData['qualifications'] ?? '';
+$data['Qualifications'] = $profileData['Qualifications'] ?? '';
 $data['experience'] = $profileData['experience'] ?? '';
 $data['education'] = $profileData['education'] ?? '';
 unset($data['profile']);
