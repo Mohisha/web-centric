@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT UserName, Password, Role FROM user WHERE UserName= '$username'";
+    $sql = "SELECT UserID, UserName, Password, Role FROM user WHERE UserName= '$username'";
 
     $result = $conn->query($sql) ;
        
@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Store username and role in session
             $_SESSION['username'] = $user['UserName'];
             $_SESSION['role'] = $user['Role'];
+            $_SESSION['UserID'] = $user['UserID'];  // Make sure you have the user 'id' in the database
 
             // Redirect based on user role
             if ($user['Role'] == "jobseeker") {
