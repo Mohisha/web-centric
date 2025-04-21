@@ -80,14 +80,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Now, store user details in the respective table
             if ($role === "jobseeker") {
                 // Insert into jobseeker table
-                $dataJobseeker = $conn->prepare("INSERT INTO jobseeker (FullName, Email, PhoneNumber) VALUES (?, ?, ?)");
-                $dataJobseeker->bind_param("sss", $username, $email, $phone_number);
+                $dataJobseeker = $conn->prepare("INSERT INTO jobseeker (FullName, PhoneNumber, Email) VALUES (?, ?, ?)");
+                $dataJobseeker->bind_param("sss", $username, $phone_number,  $email);
                 $dataJobseeker->execute();
                 $dataJobseeker->close();
             } elseif ($role === "employer") {
-                // Assuming Employer table has Name, Email, PhoneNumber (adjust as needed)
-                $dataEmployer = $conn->prepare("INSERT INTO employer (Name, Email, PhoneNumber) VALUES (?, ?, ?)");
-                $dataEmployer->bind_param("sss", $username, $email, $phone_number);
+               
+                $dataEmployer = $conn->prepare("INSERT INTO employer (CompanyName, ContactNumber, Email) VALUES (?, ?, ?)");
+                $dataEmployer->bind_param("sss", $username, $phone_number, $email);
+                $dataEmployer->execute();
+                $dataEmployer->close();
+            }elseif ($role === "admin") {
+               
+                $dataEmployer = $conn->prepare("INSERT INTO admin (FullName, PhoneNumber, Email) VALUES (?, ?, ?)");
+                $dataEmployer->bind_param("sss", $username, $phone_number, $email);
                 $dataEmployer->execute();
                 $dataEmployer->close();
             }

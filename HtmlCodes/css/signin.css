@@ -1,7 +1,9 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background: linear-gradient(to right, #7a44b361, #5b7bb26d); 
+    background-image: url("https://img.freepik.com/premium-photo/dark-tone-office-workplace-wooden-work-desk-with-laptop-documents-modern-interior-cozy-cabinet-comfortable-workspace-workplace-with-computer-home_44344-3180.jpg?semt=ais_hybrid&w=740");
+    background-size: cover;
+    background-position: center;
     padding: 50px; /* Padding around the body */
 }
 

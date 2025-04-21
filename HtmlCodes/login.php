@@ -28,8 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($user['Role'] == "jobseeker") {
                 header("Location: jobseeker-home.php");
             } else if ($user['Role'] == "employer") {
-                header("Location: employer-home.php");
-            } else {
+                header("Location: employerhome.php");
+            } else if ($user['Role'] == "admin") {
+                header("Location: admin-home.php");
+            }else {
                 // Redirect to a default page if the role is unrecognized
                 header("Location: home.php");
             }
