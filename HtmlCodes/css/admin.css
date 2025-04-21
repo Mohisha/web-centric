@@ -25,10 +25,6 @@ li {
 	--dark-grey: #AAAAAA;
 	--dark: #342E37;
 	--red: #DB504A;
-	--yellow: #FFCE26;
-	--light-yellow: #FFF2C6;
-	--orange: #FD7238;
-	--light-orange: #FFE0D3;
 }
 
 html {
@@ -46,7 +42,12 @@ body {
 	overflow-x: hidden;
 }
 
-
+.logo {
+    width: 60px; /* adjust size as needed */
+    height: auto;
+    margin-right: 20px; /* spacing between logo and text */
+    vertical-align: middle;
+  }
 
 
 
@@ -63,6 +64,15 @@ body {
 	transition: .3s ease;
 	overflow-x: hidden;
 	scrollbar-width: none;
+}
+#sidebar h1 {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px 0 0 70px;
+    padding: 0;
+    color:#5a5a84;
+    text-shadow:1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 #sidebar::--webkit-scrollbar {
 	display: none;
@@ -272,8 +282,8 @@ body {
 	align-items: center;
 }
 #content nav .profile img {
-	width: 36px;
-	height: 36px;
+	width: 60px;
+	height: 60px;
 	object-fit: cover;
 	border-radius: 50%;
 }
@@ -291,6 +301,14 @@ body {
 	font-family: var(--poppins);
 	max-height: calc(100vh - 56px);
 	overflow-y: auto;
+}
+.head input {
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: 10px;
 }
 #content main .head-title {
 	display: flex;
@@ -321,66 +339,61 @@ body {
 	color: var(--blue);
 	pointer-events: unset;
 }
-#content main .head-title .btn-download {
-	height: 36px;
-	padding: 0 16px;
-	border-radius: 36px;
-	background: var(--blue);
-	color: var(--light);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	grid-gap: 10px;
-	font-weight: 500;
-}
+
 
 
 
 
 #content main .box-info {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-	grid-gap: 24px;
-	margin-top: 36px;
-    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns exactly */
+    grid-gap: 24px; /* Space between items */
+    margin-top: 36px;
+    padding: 0; /* Ensure no padding on the grid container */
+    list-style: none; /* Remove default list styling */
 }
+
 #content main .box-info li {
-	padding: 24px;
-	background: var(--light);
-	border-radius: 20px;
-	display: flex;
-	align-items: center;
-	grid-gap: 24px;
+    padding: 24px;
+    background: var(--light);
+    border-radius: 20px;
+    display: flex; /* Flexbox for layout inside each box */
+    align-items: center; /* Center the items vertically */
+    grid-gap: 24px; /* Space between icon and text */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow to the boxes */
+    transition: all 0.3s ease-in-out; /* Optional: Adds transition for hover effects */
 }
+
 #content main .box-info li .bx {
-	width: 80px;
-	height: 80px;
-	border-radius: 10px;
-	font-size: 36px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center; /* Center icon horizontally */
+    align-items: center; /* Center icon vertically */
+    transition: background 0.3s ease; /* Optional: Smooth transition for icon background */
 }
-#content main .box-info li:nth-child(1) .bx {
-	background: var(--light-blue);
-	color: var(--blue);
-}
-#content main .box-info li:nth-child(2) .bx {
-	background: var(--light-yellow);
-	color: var(--yellow);
-}
-#content main .box-info li:nth-child(3) .bx {
-	background: var(--light-orange);
-	color: var(--orange);
-}
+
+
 #content main .box-info li .text h3 {
-	font-size: 24px;
-	font-weight: 600;
-	color: var(--dark);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0; /* Optional: Remove margin for more compact look */
 }
+
 #content main .box-info li .text p {
-	color: var(--dark);	
+    color: var(--dark);
+    margin: 0; /* Optional: Remove margin for more compact look */
 }
+
+/* Optional: Hover effect for the box */
+#content main .box-info li:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
 
 
 
@@ -464,47 +477,6 @@ body {
 	background: var(--orange);
 }
 
-
-/* #content main .table-data .todo {
-	flex-grow: 1;
-	flex-basis: 300px;
-}
-#content main .table-data .todo .todo-list {
-	width: 100%;
-}
-#content main .table-data .todo .todo-list li {
-	width: 100%;
-	margin-bottom: 16px;
-	background: var(--grey);
-	border-radius: 10px;
-	padding: 14px 20px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-#content main .table-data .todo .todo-list li .bx {
-	cursor: pointer;
-}
-#content main .table-data .todo .todo-list li.completed {
-	border-left: 10px solid var(--blue);
-}
-#content main .table-data .todo .todo-list li.not-completed {
-	border-left: 10px solid var(--orange);
-}
-#content main .table-data .todo .todo-list li:last-child {
-	margin-bottom: 0;
-} */
-/* MAIN */
-/* CONTENT */
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 768px) {
 	#sidebar {
 		width: 200px;
@@ -520,10 +492,83 @@ body {
 	}
 }
 
+/*RECENT USERS TABLE CSS*/
+#recent-users-table td[contenteditable="true"] {
+    background-color: #f9f9f9;
+    /* border: 1px solid #ccc; */
+}
+.role {
+    display: inline-block;       /* Ensures it wraps the content */
+    padding: 6px 12px;
+    border-radius: 8px;          /* Smooth rounded corners */
+    font-weight: 500;
+    color: black;                /* Text color */
+    text-align: left;
+    min-width: 100px;            /* Keeps box size consistent */
+}
+
+.role.admin {
+    color: rgb(199, 98, 40); 
+   
+}
+
+.role.employer {
+    color: #29850f;   /* Teal */
+}
+
+.role.jobseeker {
+    color: #8248d4;   /* Blue */
+}
 
 
+.status {
+    /* display: inline-block; */
+    padding: 6px 6px;
+    border-radius: 8px;
+    font-weight: 400;
+    text-align: left;
+    min-width: 100px;
+ 
+}
+
+.status.active {
+    color: #10bde4; /* Yellow-ish */
+ }
+.status.pending {
+    color: #fbbc04; 
+}
+.status.hired {
+    color: #25d43f; 
+}
+.status.cancelled {
+    color: #e41818; 
+}
+.status.banned {
+    color: #5d5b5e; 
+}
+
+.save-btn {
+    background-color: #7096c8; 
+    color: white;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+    background-color: #264356; /* Slightly darker green */
+}
+
+.save-btn:active {
+    transform: scale(0.98);
+}
 
 
+/*RECENT USERS TABLE CSS*/
 
 @media screen and (max-width: 576px) {
 	#content nav form .form-input input {
@@ -565,7 +610,5 @@ body {
 	#content main .table-data .order table {
 		min-width: 420px;
 	}
-	#content main .table-data .todo .todo-list {
-		min-width: 420px;
-	}
+
 }
