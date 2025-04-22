@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "jobseekerID": {
+        "type": "integer"
+      },
+      "jobID": {
+        "type": "string"
+      },
+      "coverLetter": {
+        "type": "string"
+      },
+      "resumeFilePath": {
+        "type": "string"
+      },
+      "dateApplied": {
+        "type": "string",
+        "format": "date"
+      },
+      "status": {
+        "type": "string",
+        "enum": ["Pending", "Reviewed", "Accepted", "Rejected"]
+      }
+    },
+    "required": ["jobseekerID", "jobID", "coverLetter", "resumeFilePath", "dateApplied", "status"],
+    "additionalProperties": false
+  }
+  
+  

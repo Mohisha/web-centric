@@ -51,6 +51,11 @@ unset($_SESSION['profile_success']);  // Clear the success message after display
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
+    <?php
+        include("nav.php");
+    ?>
+
+
 <div class="branding-text">JobQuest</div>
 <div class="container">
     <div class="profile-header">

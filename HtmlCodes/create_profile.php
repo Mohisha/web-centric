@@ -8,6 +8,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ajv/8.11.0/ajv.min.js"></script> <!-- JSON schema validator -->
 </head>
 <body>
+    <?php 
+        include("nav.php");
+    ?>
 <div class="branding-text">JobQuest</div>
 <div class="container">
 

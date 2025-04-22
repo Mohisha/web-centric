@@ -71,11 +71,8 @@ if($source == 'job_detail'){
     <!-- Back to Job List -->
     <a href=<?php echo $back_url; ?> class="back-btn">Back</a>
 
-    <!-- Apply for Job Button  DONT USE FORM TO APPLY FOR JOB APPLICATION -->
-    <form action="applyjob.php" method="POST">
-    <input type="hidden" name="job_id" value="<?php echo $jobId; ?>">
-    <button type="submit" class="apply-btn">Apply for Job</button>
-</form>
+    <a href="applyjob.php?jobID=<?php echo urlencode($jobId); ?>" class="apply-btn">Apply for Job</a>
+
 </body>
 </html>
 <?php $conn->close(); ?>
