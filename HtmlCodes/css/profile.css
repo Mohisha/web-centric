@@ -48,54 +48,7 @@ body {
  
   padding: 1rem;
 }
-.wrapper {
-  width: 100%;
-  padding: 10px 20px;
-  display: flex;
-  height: 60px;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.751);
-  position: fixed;   /* Make it stick to the top */
-  top: 0;
-  right: 0;
-  z-index: 1000;     /* Ensure it stays on top of other elements */
-}
 
-.logo img{
-  width: 60px;
-  padding-left: 5px;
-  float: left;
-  height: auto;
-}
-
-.nav-area {
-list-style: none;
-display: flex;
-margin-left: auto; /* Push the nav items to the right */
-padding: 0;
-}
-
-.nav-area li {
-  margin-left: 20px;
-  display: flex;
-  flex-direction: row;
-}
-
-.nav-area li a {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-area li a:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-}
 h1 {
   text-align: center;
   margin-bottom: 30px;

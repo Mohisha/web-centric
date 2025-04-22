@@ -12,51 +12,6 @@ body {
     /* background-color:gray; */
 }
 
-.wrapper {
-    width: 100vw;
-    padding: 10px;
-    display: flex;
-    height: 55px;
-    align-items: center; /* Vertically center the content */
-    background: rgba(0, 0, 0, 0.5); /* Transparent background for the header */
-}
-
-
-.logo img{
-    width: 80px;
-    padding-left: 0px;
-    float: left;
-    height: auto;
-  }
-
-.nav-area {
-    list-style: none;
-    display: flex;
-    margin-left: auto; /* Push the nav items to the right */
-    padding: 0;
-}
-
-.nav-area li {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-.nav-area li a {
-    display: flex;
-    flex-direction: row;
-    /* justify-content: space-between; */
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.nav-area li a:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-}
 
 .welcome-text {
     padding: 30px;
@@ -66,9 +21,10 @@ body {
     flex-grow: 1; /* Fills the rest of the page */
 }
 
-.welcome-text h1, h2 {
-    margin-top: 0;
+.welcome-text h1{
+    margin-top: 60px;
 }
+
 
 ul.job-list {
     list-style-type: none; /* Remove bullets */

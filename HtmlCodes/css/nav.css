@@ -1,0 +1,112 @@
+/* Navbar wrapper */
+.wrapper {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.877);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+  
+/* Logo image */
+    .logo img {
+    width: 80px;
+    padding-left: 20px;
+    float: left;
+    height: auto;
+}
+
+/* Navigation list */
+.nav-area {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+    padding: 0;
+}
+
+/* Navigation items */
+.nav-area li {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+/* Navigation links */
+.nav-area li a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect on nav links */
+.nav-area li a:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 2px); /* slight gap below the Profile tab */
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.751) ;/* solid dark background */
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    padding: 0;
+    margin: 0;
+    min-width: 160px;  /* only as wide as the content */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown menu items */
+.dropdown-menu li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu li a {
+    display: flex;
+    justify-content: center;    /* horizontal centering */
+    align-items: center;        /* vertical centering */
+    height: 100%;
+    padding: 10px 0;            /* even padding left/right */
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Hover effect */
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.473);
+    min-width: 160px;
+}

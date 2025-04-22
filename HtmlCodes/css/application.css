@@ -1,0 +1,159 @@
+:root {
+    --primary-color: #4f46e5;
+    --primary-dark: #4338ca;
+    --secondary-color: #0ea5e9;
+    --accent-color: #10b981;
+    --accent-hover: #059669;
+    --light-color: #f1f5f9;
+    --dark-color: #1e293b;
+    --danger-color: #ef4444;
+    --success-color: #22c55e;
+    --text-color: #334155;
+    --text-light: #64748b;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
+    --transition: all 0.3s ease;
+    --border-radius: 16px;
+    --input-radius: 10px;
+    --icon-size: 20px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../images/applicationsbgd.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(6px);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 3rem 1rem;
+}
+
+.application-container {
+    
+    width: 100%;
+    max-width: 900px;
+   
+}
+
+.application-container h2 {
+    
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 3.50rem;
+    font-family: 'Montserrat', sans-serif;
+    color:#1d147f;
+
+}
+
+#applications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Application Card */
+.application-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    border-left: 6px solid var(--primary-color);
+    position: relative;
+    animation: fadeIn 0.4s ease-in;
+}
+
+.application-card:hover {
+    transform: scale(1.01);
+    border-left-color: var(--secondary-color);
+}
+
+
+
+/* Icons */
+.application-card p::before,
+.application-card h3::before {
+    display: inline-block;
+    font-family: 'Lucide Icons', 'Font Awesome 6 Free', 'Material Icons', sans-serif;
+    margin-right: 1rem;
+    font-size: var(--icon-size);
+    color: var(--primary-color);
+    vertical-align: middle;
+}
+
+.application-card h3::before { content: "📄"; }
+.application-card p:nth-child(2)::before { content: "📍"; }
+.application-card p:nth-child(3)::before { content: "📅"; }
+.application-card p:nth-child(4)::before { content: "📌"; }
+.application-card p:nth-child(5)::before { content: "📝"; }
+.application-card p:nth-child(6)::before { content: "📎"; }
+.application-card p:nth-child(7)::before { content: "📃"; }
+.application-card p:nth-child(8)::before { content: "💰"; }
+.application-card p:nth-child(9)::before { content: "🕒"; }
+.application-card p:nth-child(10)::before { content: "🏷️"; }
+
+.application-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--dark-color);
+}
+
+.application-card p {
+    margin: 0.3rem 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+.application-card p strong {
+    color: var(--text-color);
+    min-width: 120px;
+    display: inline-block;
+    padding-right: 10px;
+}
+/* Link Style */
+.application-card a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.application-card a:hover {
+    text-decoration: underline;
+}
+
+/* Scrollbar (in case of overflow) */
+.application-container::-webkit-scrollbar {
+    width: 8px;
+}
+.application-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+.application-container::-webkit-scrollbar-track {
+    background: var(--light-color);
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .application-container {
+        padding: 1.25rem;
+    }
+    .application-card {
+        padding: 1rem;
+    }
+}
