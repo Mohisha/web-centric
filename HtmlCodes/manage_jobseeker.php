@@ -120,7 +120,6 @@
                             <option value="">Select</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                            <option value="Other">Other</option>
                         </select>
                     </label></div>
                     <div class="form-group"><label>Address:<input type="text" id="Address"></label></div>

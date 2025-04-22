@@ -37,30 +37,42 @@
 #jobseeker-table th:nth-child(2),
 #jobseeker-table td:nth-child(2), /* Full Name */
 #jobseeker-table th:nth-child(4),
-#jobseeker-table td:nth-child(4), /* Date of Birth */
-#jobseeker-table th:nth-child(8),
-#jobseeker-table td:nth-child(8)  /* Actions */
+#jobseeker-table td:nth-child(4) /* Date of Birth */
 {
-    min-width: 250px;
-    max-width: 400px;
+    min-width: 200px;
+    max-width: 300px;
     word-wrap: break-word;
     white-space: normal;
 }
 
 #jobseeker-table th:nth-child(3),
-#jobseeker-table td:nth-child(3)  /* Profile */
+#jobseeker-table td:nth-child(3)  /* DateOfBirth */
 {
-    min-width: 700px;
+    min-width: 150px;
+    max-width: 250px;
     word-wrap: break-word;
     white-space: normal;
 }
 
 #jobseeker-table th:nth-child(5),
-#jobseeker-table td:nth-child(5),
+#jobseeker-table td:nth-child(5) /* Gender */
+{
+    max-width: 200px;
+}
+
 #jobseeker-table th:nth-child(6),
-#jobseeker-table td:nth-child(6) {
+#jobseeker-table td:nth-child(6),
+#jobseeker-table th:nth-child(8),
+#jobseeker-table td:nth-child(8) {
     min-width: 250px;
     max-width: 800px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+#jobseeker-table th:nth-child(7),    /*profile*/
+#jobseeker-table td:nth-child(7) {
+    min-width:900px;
     word-wrap: break-word;
     white-space: normal;
 }
@@ -142,6 +154,24 @@
     border-radius: 6px;
     font-size: 14px;
 }
+ 
+/*gender dropdown*/
+.form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f0f0f0;
+}
+
+.form-group select:focus {
+    border-color: #5e9ed6;
+    box-shadow: 0 0 0 3px rgba(94, 158, 214, 0.2);
+    background-color: #fff;
+    outline: none;
+}
+/*gender dropdown*/
 
 #sidePanel textarea.descriptionBox {
     width: 100%;
