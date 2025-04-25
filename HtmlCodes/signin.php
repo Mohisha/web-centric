@@ -76,8 +76,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Log in the user
             $_SESSION["username"] = $username;
             $_SESSION["role"] = $role;
+            $_SESSION['UserID'] = $conn->insert_id;   // Make sure you have the user 'id' in the database
 
-            // Now, store user details in the respective table
+
+            //remove this block of code so that it saved only in user table
+            /* Now, store user details in the respective table
             if ($role === "jobseeker") {
                 // Insert into jobseeker table
                 $dataJobseeker = $conn->prepare("INSERT INTO jobseeker (FullName, PhoneNumber, Email) VALUES (?, ?, ?)");
@@ -97,6 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $dataEmployer->execute();
                 $dataEmployer->close();
             }
+            */
+
+
 
             // Redirect based on role
             if ($role === "jobseeker") {

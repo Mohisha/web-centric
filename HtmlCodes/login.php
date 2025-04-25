@@ -13,16 +13,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the user exists
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-
-        // Verify the password
-        // echo $user["Password"];
-        //echo password_hash ($password,  PASSWORD_BCRYPT);
+        
+       
         $match = password_verify($password, $user['Password']);
         if ($match) {
             // Store username and role in session
             $_SESSION['username'] = $user['UserName'];
-            $_SESSION['role'] = $user['Role'];
+            $_SESSION['role'] = strtolower($user['Role']);
             $_SESSION['UserID'] = $user['UserID'];  // Make sure you have the user 'id' in the database
+            
+            session_regenerate_id(true); // Secure and refresh the session
 
             // Redirect based on user role
             if ($user['Role'] == "jobseeker") {

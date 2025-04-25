@@ -22,7 +22,8 @@
             <li><a href="jobseeker-home.php">Homepage</a></li>
 
             <li class="dropdown">
-                <a href="profile.php">Profile</a>
+                <a href="profile.php" id="profileNav">Profile</a>
+
                 <ul class="dropdown-menu">
                     <li><a href="applications.php">Applications</a></li>
                 </ul>

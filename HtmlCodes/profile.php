@@ -17,10 +17,10 @@ $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 
-// Handle if jobseeker record doesn't exist
+// Handle if jobseeker record doesn't exist- creates profile
 if (!$row) {
-    echo "No profile found. Please contact support.";
-    exit;
+    header("Location: create_profile.php");
+    exit();
 }
 
 // Extract profile information

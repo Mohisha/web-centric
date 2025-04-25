@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 require_once 'database.php';
 require_once 'validate_profile_json.php'; // Include the validation function
 
@@ -27,21 +28,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'education' => $education,
     ];
 
+    
+    // Validate against JSON schema
     $validationErrors = validate_profile_json($profileData);
 
     if ($validationErrors === true) {
-        // Prepare JSON profile
+        // Prepare JSON to save in profile coloumn
         $profileJson = json_encode([
             'Qualifications' => $qualifications,
             'experience' => $experience,
             'education' => $education
         ]);
 
+        if (empty($name) || empty($email) || empty($phone)) {
+            echo "Error: Missing required fields.";
+            var_dump($_POST);  // Dump all the form data for debugging
+            exit;  // Stop execution if there's an error
+        }
+
         // Check if profile already exists
         $checkStmt = $conn->prepare("SELECT UserID FROM jobseeker WHERE UserID = ?");
         $checkStmt->bind_param("i", $userID);
         $checkStmt->execute();
         $result = $checkStmt->get_result();
+
+        
 
         if ($result->num_rows > 0) {
             // UPDATE existing profile
@@ -59,10 +70,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($stmt->execute()) {
             $_SESSION['profile_success'] = "Profile saved successfully!";
+            $_SESSION['has_profile'] = true;
             header("Location: profile.php");
             exit;
         } else {
             echo "Database error: " . $stmt->error;
+            exit;
         }
     } else {
         // Show validation errors
