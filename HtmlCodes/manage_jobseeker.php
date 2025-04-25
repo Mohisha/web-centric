@@ -29,13 +29,13 @@
                 </a>
             </li>
             <li class="active">
-                <a href="/web-centric/HtmlCodes/manage_jobseeker.php">
+                <a href="manage_jobseeker.php">
                     <i class='bx bxs-group' ></i>
                     <span class="text">Manage Jobseekers</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="manage_jobs.php">
                     <i class='bx bxs-pen' ></i>
                     <span class="text">Manage Jobs</span>
                 </a>

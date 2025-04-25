@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="manage_jobs.php">
                         <i class='bx bxs-pen' ></i>
                         <span class="text">Manage Jobs</span>
                     </a>
