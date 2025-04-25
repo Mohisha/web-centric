@@ -1,0 +1,237 @@
+/* ======= Jobseeker Table Card Styling ======= */
+#jobseeker-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    overflow-x: auto;
+    table-layout: auto;
+}
+
+/* Header Styling */
+#jobseeker-table thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Body Styling */
+#jobseeker-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+}
+
+/* Subtle vertical lines between columns */
+#jobseeker-table td:not(:last-child),
+#jobseeker-table th:not(:last-child) {
+    border-right: 2px solid #f0f0f0; /* Very subtle line */
+}
+
+
+/* Widen Important Columns */
+#jobseeker-table th:nth-child(2),
+#jobseeker-table td:nth-child(2), /* Full Name */
+#jobseeker-table th:nth-child(4),
+#jobseeker-table td:nth-child(4) /* Date of Birth */
+{
+    min-width: 200px;
+    max-width: 300px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+#jobseeker-table th:nth-child(3),
+#jobseeker-table td:nth-child(3)  /* DateOfBirth */
+{
+    min-width: 150px;
+    max-width: 250px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+#jobseeker-table th:nth-child(5),
+#jobseeker-table td:nth-child(5) /* Gender */
+{
+    max-width: 200px;
+}
+
+#jobseeker-table th:nth-child(6),
+#jobseeker-table td:nth-child(6),
+#jobseeker-table th:nth-child(8),
+#jobseeker-table td:nth-child(8) {
+    min-width: 250px;
+    max-width: 800px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+#jobseeker-table th:nth-child(7),    /*profile*/
+#jobseeker-table td:nth-child(7) {
+    min-width:900px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+/* All Columns Fallback */
+#jobseeker-table th,
+#jobseeker-table td {
+    white-space: normal;
+}
+
+/* ======= Action Buttons ======= */
+.editBtn, .deleteBtn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+    margin: 4px 2px;
+}
+
+.editBtn {
+    background-color: #28a745;
+}
+
+.editBtn:hover {
+    background-color: #218838;
+}
+
+.deleteBtn {
+    background-color: #dc3545;
+}
+
+.deleteBtn:hover {
+    background-color: #c82333;
+}
+
+/* ======= Search Input ======= */
+#jobseekerSearchInput {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 620px;
+    margin-bottom: 20px;
+    margin-right: 450px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+/* ======= Side Panel Styling ======= */
+#sidePanel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.2);
+    padding: 30px 25px;
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+    border-left: 6px solid #007bff;
+}
+
+#sidePanel.open {
+    right: 0;
+}
+
+/* ======= Side Panel Inputs ======= */
+#sidePanel input[type="text"],
+#sidePanel input[type="date"],
+#sidePanel input[type="email"],
+#sidePanel input[type="url"] {
+    width: 100%;
+    padding: 10px 14px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+ 
+/*gender dropdown*/
+.form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f0f0f0;
+}
+
+.form-group select:focus {
+    border-color: #5e9ed6;
+    box-shadow: 0 0 0 3px rgba(94, 158, 214, 0.2);
+    background-color: #fff;
+    outline: none;
+}
+/*gender dropdown*/
+
+#sidePanel textarea.descriptionBox {
+    width: 100%;
+    height: 150px;
+    padding: 10px 14px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+/* ======= Side Panel Buttons ======= */
+#sidePanel #saveBtn, #sidePanel #deleteBtn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Save Button Styles */
+#sidePanel #saveBtn {
+    background-color: #007bff;
+    color: white;
+}
+
+#sidePanel #saveBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Delete Button Styles */
+#sidePanel #deleteBtn {
+    background-color: #dc3545;
+    color: white;
+}
+
+#sidePanel #deleteBtn:hover {
+    background-color: #b02a37;
+}
+
+/* ======= Side Panel Cancel Button ======= */
+#cancelBtn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-color: #6c757d;
+    color: white;
+}
+
+#cancelBtn:hover {
+    background-color: #414446;
+}

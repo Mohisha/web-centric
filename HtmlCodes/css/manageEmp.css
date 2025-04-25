@@ -1,0 +1,417 @@
+/* ======= Main Table Styling ======= */
+#employer-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Table Header */
+#employer-table thead th {
+    background: linear-gradient(145deg, #f8f9fa, #f1f3f5);
+    color: #495057;
+    font-weight: 600;
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 2px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#employer-table thead th:first-child {
+    border-top-left-radius: 12px;
+}
+
+#employer-table thead th:last-child {
+    border-top-right-radius: 12px;
+}
+
+/* Table Body */
+#employer-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+#employer-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+#employer-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 14px;
+    color: #495057;
+    vertical-align: middle;
+}
+
+#employer-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Column Widths and Formatting */
+#employer-table th:nth-child(1),
+#employer-table td:nth-child(1) {
+    width: 80px;
+    text-align: center;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+#employer-table th:nth-child(2),
+#employer-table td:nth-child(2) {
+    min-width: 220px;
+    font-weight: 600;
+    color: #343a40;
+}
+
+/* Fix for description column - allow full text display with proper alignment */
+#employer-table th:nth-child(3),
+#employer-table td:nth-child(3) {
+    min-width: 300px;
+    max-width: 400px;
+    line-height: 1.5;
+    color: #6c757d;
+    word-wrap: break-word;
+    white-space: normal;
+    vertical-align: middle;
+    /* Remove the text truncation properties to show full content */
+    overflow: visible;
+    text-overflow: clip;
+    display: table-cell;
+    /* Remove the webkit line clamp that was truncating text */
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+}
+
+#employer-table th:nth-child(4),
+#employer-table td:nth-child(4) {
+    min-width:150px;
+}    
+#employer-table td:nth-child(6),
+#employer-table td:nth-child(7) {
+    color: #495057;
+}
+
+/* ======= Action Buttons ======= */
+.editBtn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(52, 152, 219, 0.2);
+}
+
+.editBtn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.editBtn:active {
+    transform: translateY(0);
+}
+
+/* Make sure edit-btn class doesn't override our editBtn */
+.edit-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(52, 152, 219, 0.2);
+}
+
+.edit-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* ======= Search Input ======= */
+#employerSearchInput {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid #dce0e4;
+    width: 400px;
+    font-size: 15px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%236c757d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 45px;
+}
+
+#employerSearchInput:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 2px 15px rgba(52, 152, 219, 0.15);
+    background-color: #fff;
+}
+
+/* ======= Side Panel Styling ======= */
+#sidePanel {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    padding: 35px 30px;
+    overflow-y: auto;
+    transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 999;
+    border-left: 4px solid #3498db;
+}
+
+#sidePanel.open {
+    right: 0;
+}
+
+/* Fix for side panel header being cut off */
+#sidePanel h3 {
+    font-size: 24px;
+    color: #343a40;
+    margin-top: 25px; /* Ensure there's space at the top */
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+    position: relative;
+    /* Prevent text truncation */
+    white-space: normal;
+    overflow: visible;
+}
+
+#sidePanel h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background-color: #3498db;
+}
+
+/* Ensure the form-group in our specific panel isn't affected by other styles */
+#sidePanel .form-group {
+    margin-bottom: 20px;
+}
+
+#sidePanel .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* ======= Side Panel Inputs ======= */
+#sidePanel input[type="text"],
+#sidePanel input[type="date"],
+#sidePanel input[type="email"],
+#sidePanel textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: 1px solid #dce0e4;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+#sidePanel input:focus,
+#sidePanel textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    background-color: #fff;
+}
+
+#sidePanel textarea.descriptionBox {
+    width: 100%;
+    height: 120px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    resize: vertical;
+    line-height: 1.5;
+    min-height: 100px;
+}
+
+/* ======= Side Panel Buttons ======= */
+#sidePanel button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidePanel #saveBtn {
+    background-color: #3498db;
+    color: white;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.2);
+}
+
+#sidePanel #saveBtn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+#sidePanel #deleteBtn {
+    background-color: #e74c3c;
+    color: white;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.2);
+}
+
+#sidePanel #deleteBtn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(231, 76, 60, 0.3);
+}
+
+#sidePanel #cancelBtn {
+    background-color: #f1f3f5;
+    color: #495057;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #dce0e4;
+}
+
+#sidePanel #cancelBtn:hover {
+    background-color: #e9ecef;
+    color: #212529;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Add transition animations for buttons */
+#sidePanel button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    #sidePanel {
+        width: 90%;
+        max-width: 450px;
+    }
+    
+    #employerSearchInput {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Add a nice scrollbar to the side panel */
+#sidePanel::-webkit-scrollbar {
+    width: 6px;
+}
+
+#sidePanel::-webkit-scrollbar-track {
+    background: #f1f3f5;
+}
+
+#sidePanel::-webkit-scrollbar-thumb {
+    background-color: #ced4da;
+    border-radius: 20px;
+}
+
+#sidePanel::-webkit-scrollbar-thumb:hover {
+    background-color: #adb5bd;
+}
+
+/* Table Row Alternating Colors */
+#employer-table tbody tr:nth-child(odd) {
+    background-color: #fcfcfc;
+}
+
+/* Add status indicators to employers */
+#employer-table td:nth-child(4)::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: #2ecc71;
+}
+
+/* Fade-in animation for table rows */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#employer-table tbody tr {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Make sure the card styling for tables doesn't override our employer table */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* Reset table styles that might be affected */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* This ensures our #employer-table styling takes precedence */
+#employer-table.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Ensure our edit button style takes precedence */
+.table .actions .edit-btn,
+.table .actions .editBtn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.table .actions .edit-btn:hover,
+.table .actions .editBtn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
