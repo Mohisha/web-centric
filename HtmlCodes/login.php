@@ -60,13 +60,13 @@ $conn->close(); // Close the connection
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url("https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+            background-image: url("https://thumbs.dreamstime.com/b/home-office-background-webinar-zoom-meeting-virtual-presentation-346023532.jpg");
             background-size: cover;
-            background-position: top;
+            background-position:center;
         }
         .login {
             padding: 50px;
-            border-radius: 0%;
+            border-radius: 30px;
             text-align: center;
             background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -77,12 +77,13 @@ $conn->close(); // Close the connection
             margin: 5px 0;
         }
         button {
-            width: 100%;
+            width: 150px;
             padding: 10px;
+            margin-top:20px;
             background: #28a745;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
         }
         button:hover {
@@ -92,6 +93,7 @@ $conn->close(); // Close the connection
             text-decoration: none;
             color: #fa0945;
             font-size: 12px;
+            font-weight: bold;
         }
         .error {
             color: red;

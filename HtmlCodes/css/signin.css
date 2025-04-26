@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image: url("https://img.freepik.com/premium-photo/dark-tone-office-workplace-wooden-work-desk-with-laptop-documents-modern-interior-cozy-cabinet-comfortable-workspace-workplace-with-computer-home_44344-3180.jpg?semt=ais_hybrid&w=740");
+    background-image: url("https://thumbs.dreamstime.com/b/stunning-modern-corporate-branding-mockup-features-sleek-white-blank-frame-against-stylish-office-background-perfect-320573082.jpg");
     background-size: cover;
     background-position: center;
     padding: 50px; /* Padding around the body */
@@ -10,7 +10,7 @@ body {
 .container {
     background: #ffffff; /* White background for the form container */
     padding: 20px; /* Padding inside the container */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 30px; /* Rounded corners */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     max-width: 400px; /* Maximum width for the container */
     margin: auto; /* Center the container */

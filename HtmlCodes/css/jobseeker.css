@@ -4,54 +4,85 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center vertically */
+    justify-content: center;
     align-items: center;
-    background-image: url("https://cdn.sanity.io/images/uqxwe2qj/production/4ee9fb18bdc214aefebf7859557a6611125c3841-760x426.png?q=80&auto=format&fit=clip&w=760");
+    background-image: url("https://t3.ftcdn.net/jpg/02/73/11/96/360_F_273119625_AB8anF9PMYFhZYXdTcVitn75U5P0i4tj.jpg");
     background-size: cover;
     background-position: center;
-    /* background-color:gray; */
 }
-
 
 .welcome-text {
     padding: 30px;
     color: #fff;
-    background: rgba(0, 0, 0, 0.6); /* Transparent background for the text */
+    background: rgba(0, 0, 0, 0.6);
     margin: 0 auto;
-    flex-grow: 1; /* Fills the rest of the page */
+    text-align: center;
 }
 
-.welcome-text h1{
+.welcome-text h1 {
     margin-top: 60px;
+    font-size: 36px;
 }
 
-
-ul.job-list {
-    list-style-type: none; /* Remove bullets */
-    padding: 0;
+/* Job List Styles: Using flexbox for a grid-like layout */
+.job-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 0;
 }
 
-ul.job-list li {
-    margin: 20px 0;
+.job-card {
+    background-color: rgba(253, 253, 253, 0.322);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%; /* Set width of each card to 30% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 250px; /* Ensures minimum width for responsiveness */
+}
+
+/* Hover effect for the card */
+.job-card:hover {
+    transform: scale(1.05);
 }
 
 .job-title {
-    background-color: rgba(89, 177, 160, 0.674); /* Box background color */
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: none;
     color: white;
-    padding: 10px 15px; /* Adjust padding inside the box */
-    border-radius: 5px; /* Rounded corners */
-    border: 2px solid #000;
-    font-size: 18px; /* Font size for job title */
-    text-decoration: none; /* No underline */
-    transition: background-color 0.3s; /* Smooth transition */
-}
-
-.job-title:hover {
-    background-color: #21883785; /* Darker green on hover */
 }
 
 .job-description {
-    color: #ddd; /* Color for job description */
-    font-size: 16px; /* Font size for description */
-    margin: 15px 0; /* Margin for spacing */
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.view-more-btn {
+    padding: 10px 20px;
+    background-color: #218888;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    min-width: 80px; /* Reduced width */
+    width: auto; /* Let the width adjust based on content */
+}
+
+.view-more-btn:hover {
+    background-color: #175463;
 }
