@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="manageApp.php">
                         <i class='bx bxs-book-open' ></i>
                         <span class="text">Manage Applications</span>
                     </a>
@@ -51,12 +51,6 @@
                     <a href="#">
                         <i class='bx bxs-doughnut-chart' ></i>
                         <span class="text">Analytics</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-message-dots' ></i>
-                        <span class="text">Message</span>
                     </a>
                 </li>
             </ul>
