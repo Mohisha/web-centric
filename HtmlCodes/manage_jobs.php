@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="analytics.php">
                     <i class='bx bxs-doughnut-chart'></i>
                     <span class="text">Analytics</span>
                 </a>
@@ -62,7 +62,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="logout">
+                <a href="adminLogout.php" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
                     <span class="text">Logout</span>
                 </a>

@@ -1,12 +1,7 @@
 <?php
 session_start();
+require_once 'database.php'; 
 
-// Include the database connection file
-require_once 'database.php'; // Make sure to adjust this path if necessary
-
-// Start the session to get the logged-in user (JobseekerID)
-
-// Check if the user is logged in by checking session variable
 if (!isset($_SESSION['UserID'])) {
     header("Location: login.php");
     exit();
@@ -23,7 +18,7 @@ $jobseekerID = $_SESSION['UserID'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Job Applications</title>
-    <link rel="stylesheet" href="css/application.css"> <!-- Assuming you are using the same CSS as in your application page -->
+    <link rel="stylesheet" href="css/application.css"> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>

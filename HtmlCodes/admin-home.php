@@ -42,7 +42,7 @@
 				<li>
                     <img src="images/users.png" alt="Job Postings Icon" style="width: 60px; height: 60px;">
 					<span class="text">
-						<h3>1250</h3>
+						<h3>3250</h3>
 						<p>Total Users</p>
 					</span>
 				</li>

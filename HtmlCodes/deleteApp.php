@@ -1,7 +1,7 @@
 <?php
 include 'database.php';
 
-$appId = $_POST['application_id'];
+$appId = $_POST['ApplicationID'];
 $query = "DELETE FROM application WHERE ApplicationID = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("s", $appId);
