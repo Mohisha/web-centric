@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("https://t3.ftcdn.net/jpg/02/73/11/96/360_F_273119625_AB8anF9PMYFhZYXdTcVitn75U5P0i4tj.jpg");
+    background-image: url("https://img.freepik.com/free-photo/creative-flat-lay-photo-workspace-desk_7861-985.jpg?semt=ais_hybrid&w=740");
     background-size: cover;
     background-position: center;
 }
@@ -38,7 +38,7 @@ body {
     background-color: rgba(253, 253, 253, 0.322);
     color: white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 25px;
     width: 30%; /* Set width of each card to 30% */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
@@ -79,8 +79,9 @@ body {
     text-transform: uppercase;
     font-size: 14px;
     text-align: center;
-    min-width: 80px; /* Reduced width */
-    width: auto; /* Let the width adjust based on content */
+    min-width: 80px; 
+    width: 120px;
+    margin: 10px auto 0 auto; /* Top margin, then auto left and right to center */
 }
 
 .view-more-btn:hover {

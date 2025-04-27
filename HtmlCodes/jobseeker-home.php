@@ -36,7 +36,6 @@ unset($_SESSION['has_profile']);
     <link rel="stylesheet" href="css/jobseeker.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
-<body style="background-image: url('https://cdn.sanity.io/images/uqxwe2qj/production/4ee9fb18bdc214aefebf7859557a6611125c3841-760x426.png?q=80&auto=format&fit=clip&w=760');">
 
 <?php 
     include("nav.php");

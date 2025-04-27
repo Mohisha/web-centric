@@ -36,9 +36,9 @@ html, body {
 }
 
 body {
-  background-image: url('../images/profilebackground2.jpg');
-  background-attachment: fixed;
+  background-image: url("https://t4.ftcdn.net/jpg/04/93/71/33/360_F_493713306_yXMd2JREpFBYRd1qsRUKfCOXSs1UbIZC.jpg");
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   backdrop-filter: blur(6px); 
@@ -96,8 +96,8 @@ h2 {
   max-width: 200px;
   max-height: 1200vh;
   overflow-y: auto;
-  margin-top: 70px; /* Push the profile container below the fixed navbar */
-  margin-left: 1rem; /* added */
+  margin-top: 60px;
+  margin-left: 100px;
   margin-right: auto; /* added to override center */
   padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.963);
